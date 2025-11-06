@@ -18,8 +18,8 @@ ENV SYSROOT=/opt/k1-sysroot
 RUN test -f $SYSROOT/lib/ld-linux-mipsn8.so.1 && test -f $SYSROOT/lib/libc.so.6
 
 # this is for building nginx
-RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y qemu-user-static
+RUN apt-get update && apt-get install -y --no-install-recommends qemu-user-static binfmt-support \
+ && update-binfmts --enable qemu-mipsel
 
 ENV PATH=/opt/toolchains/mips-gcc720-glibc229/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
