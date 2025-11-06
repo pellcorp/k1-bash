@@ -19,10 +19,6 @@ if [ -d build ]; then
 fi
 mkdir -p build
 
-if [ ! -f bash-${BVER}.tar.gz ]; then
-    wget https://ftp.gnu.org/gnu/bash/bash-${BVER}.tar.gz -O bash-${BVER}.tar.gz
-fi
-
 tar xzf bash-${BVER}.tar.gz -C build/
 cd build/bash-${BVER}
 
