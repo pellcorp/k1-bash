@@ -28,7 +28,7 @@ jobs:
 
     - uses: actions/upload-artifact@v4
       with:
-        name: mjpg-streamer
+        name: bash
         path: build/bash.tar.gz
 
     - name: branch release
